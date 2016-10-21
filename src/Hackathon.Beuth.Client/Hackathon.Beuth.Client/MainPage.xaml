@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:ListDataPage xmlns:pages="clr-namespace:Xamarin.Forms.Pages;assembly=Xamarin.Forms.Pages"
+                    xmlns:forms="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.Core">
+  <pages:ListDataPage.DataSource>
+    <pages:JsonDataSource Source="http://localhost:5000/api/klausur"/>
+  </pages:ListDataPage.DataSource>
+  
+  <pages:ListDataPage.DefaultItemTemplate>
+    <forms:DataTemplate>
+      <forms:ViewCell>
+        <pages:ListItemControl
+            Title="{pages:DataSourceBinding name}"
+            Detail="{pages:DataSourceBinding id}"
+            DataSource="{forms:Binding Value}"
+            HeightRequest="90"
+            >
+        </pages:ListItemControl>
+      </forms:ViewCell>
+    </forms:DataTemplate>
+
+  </pages:ListDataPage.DefaultItemTemplate>
+</pages:ListDataPage>
